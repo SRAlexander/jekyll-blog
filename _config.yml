@@ -13,7 +13,7 @@ description: >
 # Build settings
 
 # If you clone the Minima repo and build locally, use this setting.
-theme: minima
+remote_theme: johnpeart/govlike
 
 # As of November 2023, GitHub Pages still uses Minima 2.5.1 (https://pages.github.com/versions/). 
 # If you want to use the latest Minima version on GitHub Pages, use the following setting and 
@@ -23,6 +23,8 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
+  - jekyll-paginate
 
 # Theme-specific settings
 
@@ -34,17 +36,24 @@ header_pages:
 # Set to `true` to show excerpts on the homepage.
 #show_excerpts: false
 
+
+header:
+  type: "default" # Set to "default", "service-name" or "service-name-with-navigation" to change the header
+  site-name: "GovLike" # Appears in the header, regardless of style
+  service-name: "Service name" # Appears in the header, if site.header.type is set to "service-name" or "service-name-with-navigation"
+  # links:
+  # - name: "Item 1"
+  #   url: "/"
+  #   alt: "Go to Item 1"
+  # - name: "Item 2"
+  #   url: "/2/"
+  #   alt: "Go to Item 2"
+  
 # Minima specific settings, which are only available from Minima 3.0 onward.
-minima:
-  # Minima skin selection.
-  # Available skins are:
-  # classic	           Default, light color scheme.
-  # dark	             Dark variant of the classic skin.
-  # auto	             Adaptive skin based on the default classic and dark skins.
-  # solarized-light	   Light variant of solarized color scheme.
-  # solarized-dark	   Dark variant of solarized color scheme.
-  # solarized	         Adaptive skin for solarized color scheme skins.
-  skin: classic
+# minima:
+#   # Minima skin selection.
+#   # Available skins are:
+#   skin: classic
   
   # Minima date format.
   # The default value is "%b %d, %Y" (e.g. Nov 14, 2023) 
