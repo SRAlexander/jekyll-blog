@@ -26,9 +26,9 @@ $sass-mq-already-included: false !default;
   $mq-show-breakpoints: ();
 }
 
-@import "../vendor/_sass-mq";
+// @import "../vendor/_sass-mq";
 
-$sass-mq-already-included: true;
+$sass-mq-already-included: false;
 
 // =========================================================
 // Helpers
