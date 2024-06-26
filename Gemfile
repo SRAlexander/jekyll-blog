@@ -5,5 +5,11 @@ gemspec
 
 gem "jekyll", ENV["JEKYLL_VERSION"] if ENV["JEKYLL_VERSION"]
 gem "kramdown-parser-gfm" if ENV["JEKYLL_VERSION"] == "~> 3.9"
-gem "jekyll-remote-theme"
-gem "jekyll-paginate"
+
+group :jekyll_plugins do
+    gem "jekyll-paginate"
+    gem "jekyll-remote-theme"
+    gem "jekyll-sitemap"
+    gem "jekyll-feed"
+    gem "jekyll-redirect-from"
+end

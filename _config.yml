@@ -1,24 +1,8 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+######################
+# Site configuration #
+######################
 
-title: Your awesome title
+title: DLUHC ARM Design History
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -26,35 +10,35 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: "/jekyll-blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
 
-# Build settings
-remote_theme: johnpeart/govlike
-plugins:
-  - jekyll-feed
-  - jekyll-remote-theme
-  - jekyll-paginate
-
+##################
+# Build settings #
+##################
 paginate: 5
 paginate_path: "/_posts"
 
+sass:
+  sass_dir: _sass
+
+######################
+# Site header        #
+######################
 header:
-  type: "default" # Set to "default", "service-name" or "service-name-with-navigation" to change the header
-  site-name: "DLUHC QRM" # Appears in the header, regardless of style
-  service-name: "Service name" # Appears in the header, if site.header.type is set to "service-name" or "service-name-with-navigation"
-  # links:
-  # - name: "Item 1"
+  type: "service-name-with-navigation" # Set to "default", "service-name" or "service-name-with-navigation" to change the header
+  site-name: "GovLike" # Appears in the header, regardless of style
+  service-name: "Jekyll theme" # Appears in the header, if site.header.type is set to "service-name" or "service-name-with-navigation"
+  links:
+  # - name: "Page title"
   #   url: "/"
-  #   alt: "Go to Item 1"
-  # - name: "Item 2"
+  #   alt: "Go to Page 1"
+  # - name: "Page title"
   #   url: "/2/"
-  #   alt: "Go to Item 2"
+  #   alt: "Go to Page 2"
 
-sidebar:
-  type: "default" # Set to "default"
-  description: "A basic Jekyll theme built on the GOV.UK Design System"
 
+######################
+# Site footer        #
+######################
 footer:
   type: "default" # Set to "default"
   ogl: false # Display (true) or disable (false) the OGL licence text
@@ -66,6 +50,48 @@ footer:
   # - name: "Item 2"
   #   url: "/2/"
   #   alt: "Go to Item 2"
+
+
+######################
+# Site sidebar       #
+######################
+sidebar:
+  type: "default" # Set to "default"
+  header: "About this site"
+  description: "A basic Jekyll theme built on the GOV.UK Design System."
+
+###############
+# Collections #
+###############
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/
+  pages:
+    output: true
+    permalink: /:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+        path: "/_posts"
+        type: "posts"
+    values:
+      layout: "post"
+
+
+plugins:
+  - jekyll-paginate
+  - jekyll-remote-theme
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-redirect-from
+
+gems: [jekyll-paginate]
 
 # Exclude from processing.
 # The following items will not be processed, by default.
