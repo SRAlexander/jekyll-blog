@@ -1,7 +1,7 @@
 ---
 layout: post
-cover: /media/zach-reiner-jekyll-island-5.jpg
 title: "Some articles are just so short that we have to make the footer stick"
+date: 2016-05-19 21:00:00 +0100
 categories: misc
 ---
 
